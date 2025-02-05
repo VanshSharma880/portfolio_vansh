@@ -69,7 +69,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
               >
-                HEY, I'M&nbsp;
+                HEY, I&apos;M&nbsp;
                 <span className="text-[#d946ef]">VANSH SHARMA</span>
               </motion.h2>
 

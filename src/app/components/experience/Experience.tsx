@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaBriefcase, FaCalendarAlt, FaMapPin } from "react-icons/fa";
 
@@ -86,7 +86,7 @@ const Experience = () => {
   ];
 
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(sectionRef, { amount: 0.2, once: true });
+  // const isInView = useInView(sectionRef, { amount: 0.2, once: true });
 
   return (
     <section
