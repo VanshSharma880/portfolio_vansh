@@ -1,6 +1,6 @@
 "use client";
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import { FaBriefcase, FaCalendarAlt, FaMapPin } from "react-icons/fa";
 
 interface ExperienceItemProps {
