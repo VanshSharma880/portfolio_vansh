@@ -53,13 +53,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="font-sans w-full dark:bg-[#0A0A0A] py-10 px-6 mx-auto relative overflow-hidden">
+    <div className="font-sans w-full dark:bg-[#0A0A0A] py-10 px-4 sm:px-6 md:px-8 mx-auto relative overflow-hidden">
       {/* Heading */}
-      <h1 className="py-6 text-center text-3xl font-bold text-[#d946ef]">
+      <h1 className="py-6 text-center text-2xl sm:text-3xl font-bold text-[#d946ef]">
         Let’s Talk
       </h1>
 
-      <div className="grid md:grid-cols-2 gap-10 pt-4 items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 pt-4 items-center">
         {/* Image Section */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
@@ -72,7 +72,7 @@ export default function Contact() {
             alt="Illustration of contacting someone"
             width={500}
             height={500}
-            className="w-5/6 rounded-xl"
+            className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg rounded-xl"
             priority
           />
         </motion.div>
@@ -83,32 +83,36 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           onSubmit={handleSubmit}
-          className="bg-white dark:bg-[#0A0A0A] p-6 rounded-2xl max-w-lg mx-auto space-y-4"
+          className="bg-white dark:bg-[#0A0A0A] p-6 rounded-2xl w-full max-w-xs sm:max-w-md md:max-w-lg mx-auto space-y-4"
         >
-          <h2 className="text-xl font-bold text-purple-600 text-center mb-4">
+          <h2 className="text-lg sm:text-xl font-bold text-purple-600 text-center mb-4">
             Drop Me a Line
           </h2>
-          <div className="flex justify-evenly">
+
+          {/* Contact Info */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 text-center sm:text-left">
             <div className="flex items-center gap-2.5">
-              <FaPhoneAlt className=" text-lg mt-1 text-[#d946ef]" />
-              <p className="text-base font-normal text-gray-400 select-all">
+              <FaPhoneAlt className="text-lg text-[#d946ef]" />
+              <p className="text-sm sm:text-base text-gray-400 select-all">
                 +91 9511869329
               </p>
             </div>
             <div className="flex items-center gap-2.5">
-              <IoMdMail className="text-xl mt-1 text-[#d946ef]" />
-              <p className="text-base font-normal text-gray-400 select-all">
+              <IoMdMail className="text-xl text-[#d946ef]" />
+              <p className="text-sm sm:text-base text-gray-400 select-all">
                 vanshsharma9511@gmail.com
               </p>
             </div>
           </div>
+
+          {/* Form Inputs */}
           <input
             type="text"
             name="name"
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full bg-gray-100 dark:text-slate-800  rounded-md py-3 px-4 text-sm outline-blue-600 focus:bg-white"
+            className="w-full bg-gray-100 dark:text-slate-800 rounded-md py-3 px-4 text-sm sm:text-base outline-blue-600 focus:bg-white"
             required
           />
 
@@ -118,7 +122,7 @@ export default function Contact() {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full bg-gray-100 dark:text-slate-800  rounded-md py-3 px-4 text-sm outline-blue-600 focus:bg-white"
+            className="w-full bg-gray-100 dark:text-slate-800 rounded-md py-3 px-4 text-sm sm:text-base outline-blue-600 focus:bg-white"
             required
           />
 
@@ -128,7 +132,7 @@ export default function Contact() {
             placeholder="Phone No."
             value={formData.phone}
             onChange={handleChange}
-            className="w-full bg-gray-100 dark:text-slate-800  rounded-md py-3 px-4 text-sm outline-blue-600 focus:bg-white"
+            className="w-full bg-gray-100 dark:text-slate-800 rounded-md py-3 px-4 text-sm sm:text-base outline-blue-600 focus:bg-white"
             pattern="[0-9]{10}"
             title="Please enter a valid 10-digit phone number."
           />
@@ -136,13 +140,14 @@ export default function Contact() {
           <textarea
             name="message"
             placeholder="Message"
-            rows={5}
+            rows={4}
             value={formData.message}
             onChange={handleChange}
-            className="w-full bg-gray-100 dark:text-slate-800 rounded-md px-4 py-3 outline-blue-600 focus:bg-white"
+            className="w-full bg-gray-100 dark:text-slate-800 rounded-md px-4 py-3 text-sm sm:text-base outline-blue-600 focus:bg-white"
             required
           />
 
+          {/* Submit Button */}
           <button
             type="submit"
             disabled={isSubmitting}

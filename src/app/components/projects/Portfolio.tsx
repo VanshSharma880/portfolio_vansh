@@ -22,16 +22,16 @@ const projects: Project[] = [
     image: "./Project1.jpeg",
     techStack: ["React.js", "Node.js", "MongoDB", "Stripe", "Express.js"],
     githubUrl: "https://github.com/VanshSharma880/food_ordering-main",
-    liveUrl: "https://food-ordering-frontend-gbxz.onrender.com/",
+    liveUrl: "https://food-ordering-frontend-gbxz.onrender.com",
   },
   {
     title: "Hotel booking web app",
     description:
       "Developed this to seamless room reservations, real-time availability, attractive UI for efficient bookings.",
     image: "./Project2.jpeg",
-    techStack: ["React.js", "Supabase", "JavaScript", "Chart.js"],
+    techStack: ["Next.js", "Supabase", "JavaScript", "Chart.js"],
     githubUrl: "https://github.com/VanshSharma880/wild_oasis_admin",
-    liveUrl: "https://wild-oasis-admin-eight.vercel.app/login",
+    liveUrl: "https://wild-oasis-customers.vercel.app",
   },
   {
     title: "Job portal application",
@@ -40,7 +40,7 @@ const projects: Project[] = [
     image: "./Project3.jpeg",
     techStack: ["React.js", "Cloudinary", "Node.js", "MongoDB", "Express.js"],
     githubUrl: "https://github.com/VanshSharma880/Job_Portal",
-    liveUrl: "https://job-portal-frontend-rho.vercel.app/",
+    liveUrl: "https://job-portal-frontend-rho.vercel.app",
   },
   {
     title: "Product's features display - API",
@@ -49,7 +49,7 @@ const projects: Project[] = [
     image: "./Project4.jpeg",
     techStack: ["React query", "React", "Tailwind CSS", "JavaScript"],
     githubUrl: "https://github.com/VanshSharma880/SOCON_Assignment_",
-    liveUrl: "https://socon-assignment.vercel.app/",
+    liveUrl: "https://socon-assignment.vercel.app",
   },
   {
     title: "Fastest Pizza Booking UI",

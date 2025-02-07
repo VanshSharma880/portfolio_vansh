@@ -113,7 +113,7 @@ const Counter: React.FC = () => {
     >
       <div className="w-full grid lg:grid-cols-3 place-content-center md:grid-cols-3 grid-cols-1 gap-6 justify-center items-center">
         <div className="lg:col-span-3 md:col-span-2 flex justify-center items-center py-10">
-          <div className="w-full flex flex-wrap gap-12 justify-center items-center px-2 lg:px-12">
+          <div className="w-full flex flex-wrap lg:gap-12 justify-center items-center px-2 lg:px-12">
             {arr.map((item) => (
               <motion.div
                 initial={{ scale: 0, opacity: 0 }}

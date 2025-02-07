@@ -12,7 +12,7 @@ export default function About() {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full md:w-1/2 md:pl-12"
+          className="w-full md:w-1/2 md:pl-12 mb-5"
         >
           <h2 className="text-3xl font-bold mb-6 text-[#d946ef]">About Me</h2>
           <div className="space-y-4 text-gray-600 dark:text-gray-300 lg:text-lg">

@@ -19,7 +19,15 @@ const Navbar = () => {
   if (!mounted) return null;
 
   return (
-    <nav className="w-screen fixed top-0 left-0 bg-white/10 backdrop-blur-md dark:bg-[#0A0A0A]/10 text-slate-900 dark:text-slate-100 px-10 py-2 flex justify-between items-center z-30">
+    <nav
+      className={`w-screen fixed top-0 left-0 px-10 py-2 flex justify-between items-center z-30 
+  backdrop-blur-md ${
+    isMenuOpen
+      ? "bg-white dark:bg-black"
+      : "bg-white/10 dark:bg-[#0A0A0A]/10 md:bg-white/10 md:dark:bg-[#0A0A0A]/10"
+  } 
+  text-slate-900 dark:text-slate-100 transition-all duration-300`}
+    >
       <div className="relative inline-block">
         <ScrollLink
           to="home"
@@ -82,7 +90,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="absolute top-0 left-0 w-full bg-white/10 backdrop-blur-md dark:bg-slate-900/10 shadow-lg rounded-md"
+            className="absolute top-0 left-0 w-full bg-white backdrop-blur-md dark:bg-slate-900/90 shadow-lg rounded-md"
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -100 }}
