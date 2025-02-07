@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaCode, FaExternalLinkAlt } from "react-icons/fa";
 
 // Define the type for projects
@@ -80,6 +80,8 @@ function TechStackBadge({ tech }: { tech: string }) {
 }
 
 function ProjectCard({ project }: { project: Project }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div className="bg-white dark:bg-slate-900 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-[1.02] hover:shadow-xl">
       <div className="relative h-52">
@@ -95,9 +97,23 @@ function ProjectCard({ project }: { project: Project }) {
         <h3 className="text-xl font-bold dark:text-white text-black mb-2">
           {project.title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
-          {project.description}
-        </p>
+
+        {/* Paragraph with Tooltip on Hover */}
+        <div
+          className="relative"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
+            {project.description}
+          </p>
+
+          {isHovered && (
+            <div className="absolute left-0 top-full mt-1 w-full bg-gray-900 text-white text-xs rounded-md shadow-lg p-2 z-10">
+              {project.description}
+            </div>
+          )}
+        </div>
 
         <div className="mb-4">
           <h4 className="text-xs font-semibold text-[#d946ef] mb-2 flex items-center gap-1.5">
