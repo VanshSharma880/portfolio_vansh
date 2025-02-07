@@ -5,10 +5,10 @@ import { BsMoonStars } from "react-icons/bs";
 import { LuSunMoon } from "react-icons/lu";
 import { HiMenu, HiX } from "react-icons/hi";
 import { useTheme } from "next-themes";
-import { motion, AnimatePresence } from "framer-motion"; // Import framer-motion for animations
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,17 +16,18 @@ const Navbar = () => {
     setMounted(true);
   }, []);
 
+  // Don't render anything until mounted to prevent hydration mismatches
   if (!mounted) return null;
 
   return (
     <nav
       className={`w-screen fixed top-0 left-0 px-10 py-2 flex justify-between items-center z-30 
-  backdrop-blur-md ${
-    isMenuOpen
-      ? "bg-white dark:bg-black"
-      : "bg-white/10 dark:bg-[#0A0A0A]/10 md:bg-white/10 md:dark:bg-[#0A0A0A]/10"
-  } 
-  text-slate-900 dark:text-slate-100 transition-all duration-300`}
+      backdrop-blur-md ${
+        isMenuOpen
+          ? "bg-white dark:bg-black"
+          : "bg-white/10 dark:bg-[#0A0A0A]/10 md:bg-white/10 md:dark:bg-[#0A0A0A]/10"
+      } 
+      text-slate-900 dark:text-slate-100 transition-all duration-300`}
     >
       <div className="relative inline-block">
         <ScrollLink
@@ -63,11 +64,11 @@ const Navbar = () => {
           </ScrollLink>
         ))}
         <button
-          onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+          onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
           className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white transition-colors"
           aria-label="Toggle dark mode"
         >
-          {theme === "dark" ? (
+          {resolvedTheme === "dark" ? (
             <LuSunMoon size={20} />
           ) : (
             <BsMoonStars size={20} />
@@ -123,11 +124,13 @@ const Navbar = () => {
                 </ScrollLink>
               ))}
               <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={() =>
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                }
                 className="p-3 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white transition-colors mt-4"
                 aria-label="Toggle dark mode"
               >
-                {theme === "dark" ? (
+                {resolvedTheme === "dark" ? (
                   <LuSunMoon size={20} />
                 ) : (
                   <BsMoonStars size={20} />
