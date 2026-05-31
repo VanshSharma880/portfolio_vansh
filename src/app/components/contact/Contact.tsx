@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FormEvent, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
@@ -19,7 +18,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -100,7 +99,7 @@ export default function Contact() {
             <div className="flex items-center gap-2.5">
               <IoMdMail className="text-xl text-[#d946ef]" />
               <p className="text-sm sm:text-base text-gray-400 select-all">
-                vanshsharma9511@gmail.com
+                svansh880@gmail.com
               </p>
             </div>
           </div>

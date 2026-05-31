@@ -71,13 +71,28 @@ const Experience = () => {
   const experiences = [
     {
       title: "Software Engineer",
+      company: "Centalogic",
+      location: "Pune, Maharashtra",
+      period: "May 2025 – Present",
+      responsibilities: [
+        "Developed and maintained scalable full-stack applications using React.js, Node.js, GraphQL, and modern web technologies. Built reusable and accessible UI components using Design Language System (DLS) standards to ensure consistency across applications.",
+        "Implemented localization (i18n) and multilingual support to deliver seamless user experiences across different regions and languages. Integrated Adobe Analytics and user tracking solutions to monitor user behavior, engagement metrics, and application performance.",
+        "Performed code reviews and maintained high code quality standards using SonarQube, reducing technical debt and security vulnerabilities. Developed and executed unit test cases, integration tests, and component testing to ensure application reliability and maintainability.",
+        "Troubleshot and resolved production issues while ensuring high application availability, stability, and performance.",
+        "Implemented authentication, authorization, and security best practices for enterprise-grade applications.",
+      ],
+    },
+    {
+      title: "Software Engineer",
       company: "Vionsys IT Solutions India Pvt.Ltd",
       location: "Kharadi, Pune",
-      period: "April 2024 – Present",
+      period: "April 2024 – April 2025",
       responsibilities: [
         "Developing full-stack applications using MERN stack (Next.js, Node.js, MongoDB).",
         "Optimizing web applications for better performance and user experience.",
         "Collaborating with teams to improve code quality through best practices.",
+        "Designing and implementing RESTful APIs, authentication systems, and database schemas for scalable applications.",
+        "Participating in code reviews, debugging, and production support to ensure application reliability and maintainability.",
       ],
     },
     {

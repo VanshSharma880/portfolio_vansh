@@ -6,8 +6,8 @@ import { TypeAnimation } from "react-type-animation";
 export default function HeroSection() {
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href = "/VanshRSharma.pdf";
-    link.download = "VanshRSharma.pdf";
+    link.href = "/Vansh_Sharma (2).pdf";
+    link.download = "Vansh_Sharma (2).pdf";
     link.click();
   };
 
